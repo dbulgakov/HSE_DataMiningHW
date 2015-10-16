@@ -4,4 +4,7 @@
 
 fin = open("input.txt")
 big_string = fin.read()
-print(big_string[::-1])
+f_out = open("output.txt", "w")
+print(big_string[::-1], file=f_out)
+fin.close()
+f_out.close()
