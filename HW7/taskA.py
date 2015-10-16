@@ -5,3 +5,5 @@
 fin = open("input.txt")
 numbers_list = list(map(int, fin.read().split()))
 print(sum(numbers_list))
+f_out = open("output.txt", "w")
+f_out.write(str(sum(numbers_list)))
