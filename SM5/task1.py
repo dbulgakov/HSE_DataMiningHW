@@ -8,6 +8,7 @@ while r - l > 1:
         l = m
     else:
         r = m
+
 if x == a[l] or x == a[r]:
     print("YES")
 else:
