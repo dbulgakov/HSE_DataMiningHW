@@ -1,33 +1,23 @@
 fin = open("input.txt")
 filelines_list = fin.readlines()
 
-number_lines = int(list(filelines_list[0].split())[0])
-number_rows = int(list(filelines_list[0].split())[1])
-number_queries = int(list(filelines_list[0].split())[2])
+first_line = filelines_list[0].split()
+number_lines = int(first_line[0])
+number_rows = int(first_line[1])
+number_queries = int(first_line[2])
 
-elements_matrix = list()
-
-for line_number in range(1, number_lines + 1):
-    elements_matrix.append(list(map(int, filelines_list[line_number].split())))
-
-queries_matrix = list();
+queries_matrix = list()
 
 for line_number in range(number_lines + 1, len(filelines_list)):
-    queries_matrix.append(list(map(int, filelines_list[line_number].split())))
+    queries_matrix.append(filelines_list[line_number].split())
 
-result_list = list()
-
-print(queries_matrix)
-
-for i in range(0, number_queries):
+for query in queries_matrix:
     s = 0
-    for j in range(queries_matrix[i][0] - 1, queries_matrix[i][2]):
-        for k in range(queries_matrix[i][1] - 1, queries_matrix[i][3]):
-            s = s + elements_matrix[j][k]
-    result_list.append(s)
+    tmp_list = list()
+    for i in range(int(queries_matrix[1][1]), int(queries_matrix[1][3])+1):
+        tmp_list.append(filelines_list[i].split())
 
-f_out = open("output.txt", "w")
-result_list = map(str, result_list)
-print(("\n".join(result_list)), file=f_out)
-fin.close()
-f_out.close()
+    for j in range(int(query[0])-1, int(query[2])):
+        for k in range(int(query[1])-1, int(query[3])):
+            s = s + int(tmp_list[j][k])
+    print(s)
