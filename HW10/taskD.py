@@ -18,6 +18,3 @@ input_queries = list(map(int, input().strip().split()))
 
 for number in input_queries:
     print(isInList(input_numbers, number))
-
-
-
