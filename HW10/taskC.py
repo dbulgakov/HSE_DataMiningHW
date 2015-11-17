@@ -1,12 +1,14 @@
-tmp = input()
-input_numbers = list(map(int, input().strip().split()))
-min = input_numbers[0]
-min2 = input_numbers[1]
+N = int(input())
+list = list(map(int, input().strip().split()))
 
-for i in input_numbers:
-    if i < min:
-        min = i
-for i in input_numbers:
-    if i < min2 and i != min:
-        min2 = i
-print(min, min2)
+min1 = int(list[0])
+min2 = int(list[1])
+
+for number in list:
+    if number < min1:
+        min2 = min1
+        min1 = number
+    elif number < min2:
+        min2 = number
+
+print(min1, min2)
