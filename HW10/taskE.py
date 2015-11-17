@@ -15,12 +15,12 @@ def LowerBound(list, number, dict):
             return GoBack(list, middle, number)
     return -1
 
-def UpperBound (A, key, left):
+def UpperBound (list, number, left):
     left = left
-    right = len(A)
+    right = len(list)
     while right > left + 1:
         middle = (left + right) // 2
-        if A[middle] > key:
+        if list[middle] > number:
             right = middle
         else:
             left = middle
