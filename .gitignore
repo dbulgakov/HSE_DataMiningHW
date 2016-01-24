@@ -103,3 +103,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#CheckPoints
+.ipynb_checkpoints
