@@ -106,3 +106,6 @@ target/
 
 #CheckPoints
 .ipynb_checkpoints
+
+#DataSource HW2
+DataAnalysis/Homeworks/Solutions/HW2/txt_sentoken
